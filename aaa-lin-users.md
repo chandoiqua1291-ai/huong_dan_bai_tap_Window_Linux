@@ -13,7 +13,9 @@ sudo grep "^root:" /etc/shadow | tee lin.stdout
 ```
 Nhiệm vụ 2:
 Tạo một nhóm người dùng mới có tên là group2 trước khi khởi tạo người dùng:
+```bash
 sudo groupadd group2
+```
 Tạo 5 người dùng mới từ user2 đến user6:
 ```bash
 sudo useradd -m user2
