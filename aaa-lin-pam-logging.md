@@ -6,6 +6,8 @@ Cấu hình thêm dòng khai báo module pam_debug.so ở ngay đầu tệp tin:
 ```bash
 auth       required     pam_debug.so
 ```
+Note: cho đoạn mã trên ngay dưới đoạn mã này: # PAM configuration for the Secure Shell service
+
 Lưu và đóng tệp tin cấu hình.
 
 Hiển thị nội dung tệp tin cấu hình để kiểm tra:
@@ -20,6 +22,7 @@ Nhiệm vụ 2:Nhập mã sau để tìm ip máy chủ:
 ```bash
 ip a
 ```
+Đọc và tìm đoạn mã có dạng gần giống thế này: inet 172.16.10.2/24 brd 172.16.10.255 scope global eth0 thì phần "172.16.10.2" là ip,lưu ý có eth0 là ip máy chủ
 Mở terminal của máy khách và thực hiện đăng nhập SSH thành công bằng mã:
 ```bash
 ssh ubuntu@<IP_máy_chủ>
