@@ -47,7 +47,9 @@ mkdir testdir
 touch testdir/myfile.txt
 ```
 Thoát khỏi phiên làm việc của user1 để quay lại tài khoản ban đầu:
+```bash
 exit
+```
 Sau đó dùng lệnh để kiểm tra:
 ```bash
 sudo ls -l /home/user1/testdir/myfile.txt | tee -a lin.stdout
