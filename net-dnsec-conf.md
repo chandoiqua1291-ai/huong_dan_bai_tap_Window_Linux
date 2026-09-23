@@ -118,8 +118,8 @@ sudo nano /etc/bind/db.lab.local
 ```
 Thêm hai dòng chỉ thị chèn tệp khóa tương ứng vào cuối tệp tin, thay thế [ZSK_ID] và [KSK_ID] bằng mã số định danh thực tế vừa tạo ở các bước trên:
 ```bash
-$INCLUDE "/etc/bind/Klab.local.+008+12345.key"
-$INCLUDE "/etc/bind/Klab.local.+008+67890.key"
+$INCLUDE "/etc/bind/Klab.local.+008+[ZSK_ID].key"
+$INCLUDE "/etc/bind/Klab.local.+008+[KSK_ID].key"
 ```
 Chỉ dùng tệp .key, không dùng tệp .private. Lưu và thoát: Ctrl+O, Enter, Ctrl+X.
 Bước 5: Hiển thị nội dung tệp
@@ -140,10 +140,12 @@ cd /etc/bind
 ```
 ```bash
 grep DNSKEY /etc/bind/Klab.local*.key
-```bash
+```
 Dòng có số 257 là KSK, dòng có số 256 là ZSK. Tên tệp .key tương ứng cho biết ID. Hoặc xem nhanh bằng ls /etc/bind/Klab.local*.key.
 Chạy lệnh ký, thay [KSK_ID] và [ZSK_ID] bằng số thật
+```bash
 sudo dnssec-signzone -o lab.local -k /etc/bind/Klab.local.+008+[KSK_ID].key /etc/bind/db.lab.local /etc/bind/Klab.local.+008+[ZSK_ID].key
+```
 Thành công sẽ thấy các dòng như Verifying the zone using the following algorithms: RSASHA256 và Zone fully signed, cuối cùng là db.lab.local.signed.
 
 Kiểm tra tệp đã được tạo:
