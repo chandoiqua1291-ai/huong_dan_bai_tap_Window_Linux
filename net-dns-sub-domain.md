@@ -92,8 +92,10 @@ Bước 2: Thêm bản ghi api
 
 Kéo xuống dòng cuối cùng của tệp (dùng Ctrl+End), xuống một dòng mới rồi gõ hoặc dán:
 ```bash
-api     IN      A       192.168.14.11\
+api     IN      A       192.168.14.11
+```
 Sau khi thêm, cuối tệp sẽ trông như sau:
+```bash
 ns1     IN      A       192.168.14.10
 server  IN      A       192.168.14.10
 api     IN      A       192.168.14.11
