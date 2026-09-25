@@ -161,14 +161,16 @@ $TTL    604800
                     2419200         ; Expire
                      604800 )       ; Negative Cache TTL
 
+; Cấu hình máy chủ tên miền gốc của zone
 @       IN      NS      ns1.lab.local.
-@       IN      MX      10 mail.lab.local.
 
+; Bản ghi địa chỉ A trỏ tên máy chủ ns1 và server về IP của Server
 ns1     IN      A       192.168.14.10
 server  IN      A       192.168.14.10
 api     IN      A       192.168.14.11
 shop    IN      A       192.168.14.12
 mail    IN      A       192.168.14.13
+@       IN      MX      10 mail.lab.local.
 ```
 Bước 3: Kiểm tra và in nội dung
 ```bash
